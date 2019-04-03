@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Update House</title>
+</head>
+<body>
+<form action="#" th:action="@{/update/{id}(id=${house.id})}"
+th:object="${house}" method="post">
+ <label for="address">Address</label>
+ <input type="text" th:field="*{address}" id="address"
+placeholder="Address">
+ <span th:if="${#fields.hasErrors('address')}"
+th:errors="*{address}"></span>
+
+ <label for="street">Street</label>
+ <input type="text" th:field="*{street}"
+id="street" placeholder="Street">
+ <span th:if="${#fields.hasErrors('street')}"
+th:errors="*{street}"></span>
+
+ <label for="city">City</label>
+ <input type="text" th:field="*{city}" id="city"
+placeholder="City">
+ <span th:if="${#fields.hasErrors('city')}"
+th:errors="*{city}"></span>
+
+ <label for="state">State</label>
+ <input type="text" th:field="*{state}" id="state"
+placeholder="State">
+ <span th:if="${#fields.hasErrors('state')}"
+th:errors="*{state}"></span>
+
+ <label for="zip">Zip</label>
+ <input type="text" th:field="*{zip}" id="zip"
+placeholder="Zip">
+ <span th:if="${#fields.hasErrors('zip')}"
+th:errors="*{zip}"></span>
+
+ <input type="submit" value="Update House">
+</form>
+</body>
+</html>
